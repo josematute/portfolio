@@ -4,6 +4,7 @@ import { cookies } from "next/headers"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import { ThemeProvider } from "next-themes"
+import { Toaster } from "sonner"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default async function RootLayout({
 						<Navbar />
 						<main className="container mx-auto px-4 py-8 max-w-4xl">{children}</main>
 					</div>
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>
