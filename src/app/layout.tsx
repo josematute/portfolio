@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { cookies } from "next/headers"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import { ThemeProvider } from "next-themes"
@@ -22,16 +23,20 @@ export const metadata: Metadata = {
 	}
 }
 
-export default function RootLayout({
+export default async function RootLayout({
 	children
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	const cookieStore = await cookies()
+	const themeCookie = cookieStore.get("theme")
+	const defaultTheme = themeCookie?.value || "system"
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="portfolio-theme">
-					<div className="min-h-screen bg-background text-foreground">
+				<ThemeProvider attribute="class" defaultTheme={defaultTheme} enableSystem disableTransitionOnChange storageKey="portfolio-theme">
+					<div>
 						<Navbar />
 						<main className="container mx-auto px-4 py-8 max-w-4xl">{children}</main>
 					</div>

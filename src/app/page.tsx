@@ -8,7 +8,7 @@ import Languages from "@/components/languages"
 
 export default function Home() {
 	return (
-		<div className="space-y-16 pb-16">
+		<div className="space-y-4">
 			<About />
 			<Experience />
 			<Education />
