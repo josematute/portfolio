@@ -4,7 +4,7 @@ import Experience from "@/components/experience"
 import Footer from "@/components/footer"
 import Projects from "@/components/projects"
 import Skills from "@/components/skills"
-import { Languages } from "lucide-react"
+import Languages from "@/components/languages"
 
 export default function Home() {
 	return (

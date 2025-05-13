@@ -7,8 +7,9 @@ export const CONTACT_INFO = {
   linkedin: "https://www.linkedin.com/in/jose-garcia-swe/"
 }
 
-export const PROFILE_DESCRIPTION = `Full-stack software engineer with experience building scalable applications across startups, using modern frameworks like
-Next.js, Flutter, Node.js, and Supabase.Specialize in crafting robust frontends and efficient backends, integrating AI APIs,
-  and working with complex data systems like Salesforce.Thrive in fast - paced environments, take ownership of challenging
-problems, and build meaningful products that drive growth.Currently seeking opportunities in full - stack development, AI agent
-engineering, or Bitcoin - focused projects that push technical boundaries and foster continuous learning.`
+export const PROFILE_DESCRIPTION = `I am a full-stack software engineer with expertise in developing scalable applications across 
+various startups. My technical proficiency encompasses modern frameworks including Next.js, Flutter, Node.js, and Supabase. 
+I excel in building resilient frontend solutions and optimizing backend systems, with particular expertise in AI API integration 
+and complex data systems such as Salesforce. I demonstrate exceptional performance in fast paced environments, consistently delivering 
+solutions to complex challenges while driving product growth. I am currently pursuing opportunities in full-stack development, 
+AI agent engineering, and Bitcoin-focused initiatives that offer technical innovation and continuous learning opportunities.`
