@@ -1,4 +1,4 @@
-import type { Company, Education, Language, Project, SkillCategory } from "@/types"
+import { LanguageProficiency, type Company, type Education, type Language, type Project, type SkillCategory } from "@/types"
 
 export const companies: Company[] = [
   {
@@ -74,44 +74,54 @@ export const education: Education[] = [
 
 export const projects: Project[] = [
   {
-    title: "CryptoTracker",
+    title: "Bitcoin Node Server",
     description:
-      "A real-time cryptocurrency tracking application with price alerts and portfolio management. Features include market data visualization, custom alerts, and transaction history.",
-    thumbnail: "/placeholder.svg?height=200&width=350",
-    skills: ["React", "Node.js", "Chart.js", "CoinGecko API", "Firebase"],
-    link: "https://crypto-tracker-demo.com",
-    github: "https://github.com/josegarcia/crypto-tracker",
-    duration: "Jan 2023 – Mar 2023",
+      "A TypeScript-based Express server that interfaces with a self-hosted Bitcoin node, providing blockchain data via a RESTful API. Utilizes TSOA for API documentation and adheres to separation of concerns principles.",
+    thumbnail: "/btc-server.png",
+    skills: ["TypeScript", "Express", "TSOA", "Bitcoin Core", "REST API"],
+    link: "https://jeg.ngrok.app/docs/",
+    github: "https://github.com/josematute/bitcoin-node-server",
+    duration: "Mar 2025 – Present",
   },
   {
-    title: "AI Document Parser",
+    title: "BTC Dashboard",
     description:
-      "An application that uses AI to extract and categorize information from various document types. Supports PDFs, images, and scanned documents with high accuracy text extraction.",
-    thumbnail: "/placeholder.svg?height=200&width=350",
-    skills: ["Next.js", "OpenAI API", "Supabase", "TypeScript", "Tailwind CSS"],
-    link: "https://ai-document-parser.vercel.app",
-    github: "https://github.com/josegarcia/ai-document-parser",
-    duration: "Oct 2023 – Dec 2023",
+      "A frontend dashboard built with Next.js and Tailwind CSS that displays real-time Bitcoin blockchain data fetched from the Bitcoin Node Server.",
+    thumbnail: "/btc-frontend.png",
+    skills: ["Next.js", "Tailwind CSS", "REST API", "Bitcoin"],
+    link: "https://btc-dashboard-kl97.vercel.app/login",
+    github: "https://github.com/josematute/btc_dashboard",
+    duration: "Mar 2025 – Present",
   },
   {
-    title: "Smart Home Dashboard",
+    title: "VIUS Built – Estimating & Project Management Web App",
     description:
-      "A centralized dashboard for controlling and monitoring smart home devices. Integrates with multiple IoT platforms and provides automation capabilities.",
-    thumbnail: "/placeholder.svg?height=200&width=350",
-    skills: ["Flutter", "Firebase", "MQTT", "REST APIs", "Material Design"],
-    github: "https://github.com/josegarcia/smart-home-dashboard",
-    duration: "Apr 2023 – Jun 2023",
+      "Developed a full-stack construction management platform using Next.js with server components, server actions, and SWR. Built backend features with Express and integrated OpenAI/Gemini APIs for document parsing and automation. Managed data with Supabase (Postgres, RPCs, RLS) and Docker, enabling accurate estimate generation and streamlined subcontractor workflows.",
+    thumbnail: "/vius_estimating.webp",
+    skills: ["Next.js", "Supabase", "OpenAI API", "Gemini API", "Express", "Docker", "PostgreSQL"],
+    link: "https://app.viusbuilt.com/",
+    github: null,
+    duration: "March 2024 – May 2025",
   },
-]
+  {
+    title: "1440 – Multi-Channel Messaging App",
+    description:
+      "A cross-platform mobile app built with Flutter that unifies messaging from platforms like WhatsApp, Facebook Messenger, and Twitter for organizations using Salesforce. Integrated Salesforce GraphQL and REST APIs, implemented SOQL queries, and managed app state with Provider to enable seamless, real-time communication within a single app interface.",
+    thumbnail: "/1440_appstore.png",
+    skills: ["Flutter", "Salesforce", "GraphQL", "REST APIs", "SOQL", "Provider"],
+    link: "https://apps.apple.com/us/app/1440-mobile/id6468288380",
+    github: null,
+    duration: "May 2023 – Feb 2024",
+  },
+];
 
 export const skillCategories: SkillCategory[] = [
   {
     name: "Frontend",
     skills: [
-      { name: "React", level: 5 },
-      { name: "Next.js", level: 5 },
+      { name: "React", level: 4 },
+      { name: "Next.js", level: 4 },
       { name: "Flutter", level: 4 },
-      { name: "HTML/CSS", level: 5 },
       { name: "Tailwind CSS", level: 4 },
     ],
   },
@@ -121,33 +131,33 @@ export const skillCategories: SkillCategory[] = [
       { name: "Node.js", level: 4 },
       { name: "Express", level: 4 },
       { name: "Supabase", level: 4 },
-      { name: "PostgreSQL", level: 3 },
-      { name: "Salesforce", level: 4 },
+      { name: "PostgreSQL", level: 4 },
+      { name: "Salesforce", level: 3 },
     ],
   },
   {
     name: "Languages",
     skills: [
-      { name: "TypeScript", level: 5 },
-      { name: "JavaScript", level: 5 },
-      { name: "Dart", level: 4 },
-      { name: "Python", level: 3 },
+      { name: "TypeScript", level: 4 },
+      { name: "JavaScript", level: 4 },
       { name: "SQL", level: 4 },
+      { name: "Dart", level: 3 },
+      { name: "Python", level: 3 },
     ],
   },
   {
     name: "Tools & Technologies",
     skills: [
       { name: "Git", level: 5 },
-      { name: "Docker", level: 3 },
-      { name: "CI/CD", level: 3 },
       { name: "AI APIs (OpenAI, Gemini)", level: 4 },
       { name: "REST/GraphQL", level: 4 },
+      { name: "Docker", level: 3 },
+      { name: "CI/CD", level: 3 },
     ],
   },
 ]
 
 export const languages: Language[] = [
-  { name: "English", proficiency: "Fluent", level: 5 },
-  { name: "Spanish", proficiency: "Native", level: 5 },
+  { name: "English", proficiency: LanguageProficiency.Fluent, level: 5 },
+  { name: "Spanish", proficiency: LanguageProficiency.Native, level: 5 },
 ]

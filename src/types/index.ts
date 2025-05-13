@@ -25,8 +25,8 @@ export interface Project {
   description: string
   thumbnail: string
   skills: string[]
-  link?: string
-  github?: string
+  link: string | null
+  github: string | null
   duration: string
 }
 
@@ -40,8 +40,16 @@ export interface SkillCategory {
   skills: Skill[]
 }
 
+export enum LanguageProficiency {
+  Native = "Native",
+  Fluent = "Fluent",
+  Professional = "Professional",
+  Intermediate = "Intermediate",
+  Basic = "Basic",
+}
+
 export interface Language {
   name: string
-  proficiency: "Native" | "Fluent" | "Professional" | "Intermediate" | "Basic"
+  proficiency: LanguageProficiency
   level: number // 1-5
 }
