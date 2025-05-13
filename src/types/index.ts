@@ -16,14 +16,14 @@ export interface Education {
   institution: string
   location: string
   duration: string
-  description?: string
-  logo: string
+  description: string
+  logo: string | null
 }
 
 export interface Project {
   title: string
   description: string
-  thumbnail: string
+  thumbnail: string | null
   skills: string[]
   link: string | null
   github: string | null

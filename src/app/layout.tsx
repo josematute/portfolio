@@ -30,9 +30,11 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-					<Navbar />
-					<main className="container mx-auto px-4 py-8 max-w-4xl">{children}</main>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="portfolio-theme">
+					<div className="min-h-screen bg-background text-foreground">
+						<Navbar />
+						<main className="container mx-auto px-4 py-8 max-w-4xl">{children}</main>
+					</div>
 				</ThemeProvider>
 			</body>
 		</html>

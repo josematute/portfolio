@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { education } from "@/utils/resume-data"
 import { GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 export default function Education() {
 	return (
@@ -14,8 +15,8 @@ export default function Education() {
 					<Card key={index}>
 						<CardHeader className="pb-2">
 							<div className="flex items-start gap-4">
-								<div className="w-16 h-16 rounded-md overflow-hidden flex-shrink-0 border">
-									<img src={edu.logo || "/placeholder.svg"} alt={edu.institution} className="w-full h-full object-cover" />
+								<div className="w-16 h-16 rounded-md overflow-hidden flex-shrink-0 border relative">
+									<Image src={edu.logo || "/edu-placeholder.svg"} alt={edu.institution} fill className="object-cover" />
 								</div>
 								<div className="flex flex-col md:flex-row md:justify-between w-full gap-2">
 									<div>

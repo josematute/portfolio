@@ -2,8 +2,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { projects } from "@/utils/resume-data"
-import { ExternalLink, Github, Layers } from "lucide-react"
+import { ExternalLink, Layers } from "lucide-react"
+import { SiGithub } from "react-icons/si"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Projects() {
 	return (
@@ -15,12 +17,19 @@ export default function Projects() {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{projects.map((project, index) => (
 					<Card key={index} className="flex flex-col h-full">
-						<div className="aspect-video w-full overflow-hidden">
-							<img
-								src={project.thumbnail || "/placeholder.svg"}
-								alt={project.title}
-								className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-							/>
+						<div className="aspect-video w-full overflow-hidden relative">
+							{project.link ? (
+								<Link href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+									<Image
+										src={project.thumbnail || "/logo.svg"}
+										alt={project.title}
+										fill
+										className="object-cover transition-transform hover:scale-105 duration-300"
+									/>
+								</Link>
+							) : (
+								<Image src={project.thumbnail || "/logo.svg"} alt={project.title} fill className="object-cover" />
+							)}
 						</div>
 						<CardHeader className="pb-2">
 							<div className="flex justify-between items-start">
@@ -50,7 +59,7 @@ export default function Projects() {
 							{project.github && (
 								<Button variant="outline" size="sm" asChild className="gap-2">
 									<Link href={project.github} target="_blank" rel="noopener noreferrer">
-										<Github className="h-4 w-4" />
+										<SiGithub className="h-4 w-4" />
 										<span>Code</span>
 									</Link>
 								</Button>
