@@ -101,7 +101,7 @@ export const projects: Project[] = [
     title: "VIUS Built – Estimating & Project Management Web App",
     description:
       "Developed a full-stack construction management platform using Next.js with server components, server actions, and SWR. Built backend features with Express and integrated OpenAI/Gemini APIs for document parsing and automation. Managed data with Supabase (Postgres, RPCs, RLS) and Docker, enabling accurate estimate generation and streamlined subcontractor workflows.",
-    thumbnail: "/vius_estimating.webp",
+    thumbnail: "/estimating.png",
     skills: ["Next.js", "Supabase", "OpenAI API", "Gemini API", "Express", "Docker", "PostgreSQL"],
     link: "https://app.viusbuilt.com/",
     github: null,
