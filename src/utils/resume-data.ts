@@ -82,7 +82,7 @@ export const projects: Project[] = [
     description:
       "A TypeScript-based Express server that interfaces with a self-hosted Bitcoin node, providing blockchain data via a RESTful API. Utilizes TSOA for API documentation and adheres to separation of concerns principles.",
     thumbnail: "/btc-server.png",
-    skills: ["TypeScript", "Express", "TSOA", "Bitcoin Core", "REST API"],
+    skills: ["TypeScript", "Express", "JWT Auth", "TSOA", "bitcoin-cli", "REST API", "Docker", "Ngrok", "Prisma", "PostgreSQL", "Swagger"],
     link: "https://jeg.ngrok.app/docs/",
     github: "https://github.com/josematute/bitcoin-node-server",
     duration: "Mar 2025 – Present",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     description:
       "A frontend dashboard built with Next.js and Tailwind CSS that displays real-time Bitcoin blockchain data fetched from the Bitcoin Node Server.",
     thumbnail: "/btc-frontend.png",
-    skills: ["Next.js", "Tailwind CSS", "REST API", "Bitcoin"],
+    skills: ["Next.js", "Tailwind", "REST API", "Vercel", "DNS", "V0", "Server Actions",],
     link: "https://btc-dashboard-kl97.vercel.app/login",
     github: "https://github.com/josematute/btc_dashboard",
     duration: "Mar 2025 – Present",
