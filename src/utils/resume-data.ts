@@ -1,4 +1,11 @@
-import { LanguageProficiency, type Company, type Education, type Language, type Project, type SkillCategory } from "@/types"
+import {
+  LanguageProficiency,
+  type Company,
+  type Education,
+  type Language,
+  type Project,
+  type SkillCategory,
+} from "@/types"
 
 export const companies: Company[] = [
   {
@@ -9,13 +16,13 @@ export const companies: Company[] = [
         title: "Software Engineer",
         duration: "Feb 2024 – May 2025",
         description: [
-          "Full-stack role using Next.js (App Router, SSR, Server Actions)",
-          "Integrated AI APIs (OpenAI, Gemini) for document parsing",
-          "Used Supabase (Postgres, RPC, RLS), Docker, and Express for backend tooling",
+          "Led development of a full-stack construction dashboard using Next.js, App Router, and server actions",
+          "Built secure backend services with Express and Supabase, containerized with Docker",
+          "Integrated OpenAI and Gemini APIs to automate document parsing and Q&A workflows",
         ],
       },
     ],
-    technologies: ["Next.js", "React", "Supabase", "OpenAI", "Gemini", "Docker", "Express", "TypeScript"],
+    technologies: ["Next.js", "React", "Supabase", "OpenAI", "Gemini", "Docker", "Express", "TypeScript", "PostgreSQL"],
   },
   {
     name: "1440",
@@ -25,22 +32,20 @@ export const companies: Company[] = [
         title: "Software Engineer",
         duration: "Sep 2023 – Feb 2024",
         description: [
-          "Worked on a multi-communication app for Salesforce",
-          "Used Flutter, Salesforce GraphQL and REST APIs, SOQL, Provider, and state management",
-          "Led development of key features and mentored junior team members",
+          "Maintained and updated a Flutter-based mobile app for Salesforce organizations, enabling seamless communication through multiple channels",
+          "Integrated Salesforce GraphQL and REST APIs—authoring SOQL queries and Provider-driven state management",
+          "Integrated API endpoints and Webhooks to enable real-time communication and data synchronization across multiple channels",
         ],
       },
       {
         title: "Intern",
         duration: "May 2023 – Sep 2023",
         description: [
-          "Contributed to the development of Salesforce integration features",
-          "Implemented UI components using Flutter and managed state with Provider",
-          "Collaborated with the team to improve app performance and user experience",
+          "Architected and implemented a cross-platform Flutter mobile app (Android & iOS) from the ground up, integrating initial Salesforce API endpoints",
         ],
       },
     ],
-    technologies: ["Flutter", "Salesforce", "GraphQL", "REST", "SOQL", "Provider", "Dart"],
+    technologies: ["Flutter", "Salesforce", "GraphQL", "REST", "SOQL", "Provider", "Dart", "TypeScript"],
   },
   {
     name: "Sorenson Communications",
@@ -50,24 +55,23 @@ export const companies: Company[] = [
         title: "Intern",
         duration: "May 2022 – Aug 2022",
         description: [
-          "Built a Flutter-based web project",
-          "Developed a React extension for Microsoft Teams",
-          "Collaborated with the design team to implement responsive UI components",
+          "Built secure client login features for a Flutter-based patient portal web app",
+          "Developed accessible UI components for a Microsoft Teams React extension",
         ],
       },
     ],
-    technologies: ["Flutter", "React", "Microsoft Teams", "JavaScript"],
+    technologies: ["Flutter", "React", "Microsoft Teams", "TypeScript", "JavaScript"],
   },
 ]
 
 export const education: Education[] = [
   {
     degree: "Bachelor of Science in Computer Science",
-    institution: "University of California, Berkeley",
-    location: "Berkeley, CA",
-    duration: "2019 – 2023",
+    institution: "University of Utah",
+    location: "Salt Lake City, UT",
+    duration: "2020 – 2023",
     description:
-      "Focused on software engineering, distributed systems, and artificial intelligence. Graduated with honors.",
+      "Graduated with 3.65 GPA and Dean's List for 4 semesters. Concentrations in software engineering, web development and full-stack development.",
     logo: "/university_of_utah_logo.jpeg",
   },
 ]
