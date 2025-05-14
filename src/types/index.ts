@@ -53,3 +53,9 @@ export interface Language {
   proficiency: LanguageProficiency
   level: number // 1-5
 }
+
+export enum Theme {
+  Light = "light",
+  Dark = "dark",
+  System = "system",
+}

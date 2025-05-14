@@ -7,6 +7,7 @@ import Link from "next/link"
 import { downloadResume } from "@/app/actions"
 import { useState } from "react"
 import { toast } from "sonner"
+import { RESUME_FILE_NAME } from "@/utils/constants"
 
 export default function Navbar() {
 	const [isDownloading, setIsDownloading] = useState(false)
@@ -19,12 +20,12 @@ export default function Navbar() {
 				const url = window.URL.createObjectURL(result.blob)
 				const a = document.createElement("a")
 				a.href = url
-				a.download = "Jose_E_Garcia_Resume.pdf"
+				a.download = RESUME_FILE_NAME
 				document.body.appendChild(a)
 				a.click()
 				window.URL.revokeObjectURL(url)
 				document.body.removeChild(a)
-				toast.success("Resume downloaded successfully! Thank you for your interest.")
+				toast.success(`Resume downloaded successfully! Thank you for your interest.`)
 			}
 		} catch (error) {
 			console.error("Error downloading resume:", error)

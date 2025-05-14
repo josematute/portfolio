@@ -5,6 +5,7 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import { ThemeProvider } from "next-themes"
 import { Toaster } from "sonner"
+import { Theme } from "@/types"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default async function RootLayout({
 }>) {
 	const cookieStore = await cookies()
 	const themeCookie = cookieStore.get("theme")
-	const defaultTheme = themeCookie?.value || "system"
+	const defaultTheme = themeCookie?.value || Theme.System
 
 	return (
 		<html lang="en" suppressHydrationWarning>
