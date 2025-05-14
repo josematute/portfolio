@@ -40,7 +40,7 @@ export default function Navbar() {
 			<div className="container flex h-16 items-center justify-between px-4 mx-auto max-w-4xl">
 				<div className="flex items-center gap-2">
 					<Link href="/" className="font-semibold text-lg">
-						Jose E. Garcia
+						Jose Garcia
 					</Link>
 					<span className="text-muted-foreground hidden sm:inline-block">Software Engineer</span>
 				</div>
