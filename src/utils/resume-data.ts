@@ -16,9 +16,10 @@ export const companies: Company[] = [
         title: "Software Engineer",
         duration: "Feb 2024 – May 2025",
         description: [
-          "Led development of a full-stack construction dashboard using Next.js, App Router, and server actions",
-          "Built secure backend services with Express and Supabase, containerized with Docker",
-          "Integrated OpenAI and Gemini APIs to automate document parsing and Q&A workflows",
+          "Built a construction management platform with Next.js, supporting project estimation, bid tracking, and subcontractor workflows",
+          "Developed Dockerized backend services using Express and Supabase (Postgres, RPCs, RLS) to manage compliance, including W-9s and insurance validation",
+          "Integrated OpenAI & Gemini APIs to automate extraction and validation of insurance and bid documents",
+          "Collaborated with general contractors to define requirements and rapidly iterate on dashboard features and user experience",
         ],
       },
     ],
@@ -32,9 +33,10 @@ export const companies: Company[] = [
         title: "Software Engineer",
         duration: "Sep 2023 – Feb 2024",
         description: [
-          "Maintained and updated a Flutter-based mobile app for Salesforce organizations, enabling seamless communication through multiple channels",
-          "Integrated Salesforce GraphQL and REST APIs—authoring SOQL queries and Provider-driven state management",
-          "Integrated API endpoints and Webhooks to enable real-time communication and data synchronization across multiple channels",
+          "Built a Flutter mobile app from scratch (Android & iOS) to consolidate all Salesforce messaging channels—WhatsApp, Messenger, Twitter, Apple Messages, and SMS—into a single feed",
+          "Developed and maintained GraphQL endpoints and REST integrations, writing complex SOQL queries to support real-time message sync across platforms",
+          "Implemented robust Provider-based state management and performance tweaks",
+          "Collaborated with stakeholders to define new APIs, prioritize features, and iterate on UX based on live user feedback",
         ],
       },
       {
@@ -45,7 +47,7 @@ export const companies: Company[] = [
         ],
       },
     ],
-    technologies: ["Flutter", "Salesforce", "GraphQL", "REST", "SOQL", "Provider", "Dart", "TypeScript"],
+    technologies: ["Flutter", "Salesforce", "GraphQL", "REST", "SOQL", "Provider", "Dart"],
   },
   {
     name: "Sorenson Communications",
@@ -102,7 +104,7 @@ export const projects: Project[] = [
     description:
       "Developed a full-stack construction management platform using Next.js with server components, server actions, and SWR. Built backend features with Express and integrated OpenAI/Gemini APIs for document parsing and automation. Managed data with Supabase (Postgres, RPCs, RLS) and Docker, enabling accurate estimate generation and streamlined subcontractor workflows.",
     thumbnail: "/estimating.png",
-    skills: ["Next.js", "Supabase", "OpenAI API", "Gemini API", "Express", "Docker", "PostgreSQL"],
+    skills: ["Next.js", "Tailwind", "Server Actions", "Supabase", "PostgreSQL", "RPCs", "RLS", "OpenAI API", "Gemini API", "Express", "Docker"],
     link: "https://app.viusbuilt.com/",
     github: null,
     duration: "March 2024 – May 2025",
@@ -112,7 +114,7 @@ export const projects: Project[] = [
     description:
       "A cross-platform mobile app built with Flutter that unifies messaging from platforms like WhatsApp, Facebook Messenger, and Twitter for organizations using Salesforce. Integrated Salesforce GraphQL and REST APIs, implemented SOQL queries, and managed app state with Provider to enable seamless, real-time communication within a single app interface.",
     thumbnail: "/1440_appstore.png",
-    skills: ["Flutter", "Salesforce", "GraphQL", "REST APIs", "SOQL", "Provider"],
+    skills: ["Flutter", "Dart", "Salesforce", "GraphQL", "REST APIs", "SOQL", "Provider", "State Management", "iOS", "Android"],
     link: "https://apps.apple.com/us/app/1440-mobile/id6468288380",
     github: null,
     duration: "May 2023 – Feb 2024",
@@ -136,6 +138,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Express", level: 4 },
       { name: "Supabase", level: 4 },
       { name: "PostgreSQL", level: 4 },
+      { name: "RPCs/RLS", level: 4 },
       { name: "Salesforce", level: 3 },
     ],
   },
