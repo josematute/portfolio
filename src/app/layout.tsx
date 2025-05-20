@@ -19,10 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: "Jose Garcia – Software Engineer",
-	description: "Full-stack developer with expertise in modern web stacks and AI tools.",
-	icons: {
-		icon: "/logo.svg"
-	}
+	description: "Full-stack developer with expertise in modern web stacks and AI tools."
 }
 
 export default async function RootLayout({
