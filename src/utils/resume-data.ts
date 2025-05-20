@@ -95,7 +95,7 @@ export const projects: Project[] = [
       "A frontend dashboard built with Next.js and Tailwind CSS that displays real-time Bitcoin blockchain data fetched from the Bitcoin Node Server.",
     thumbnail: "/btc-frontend.png",
     skills: ["Next.js", "Tailwind", "REST API", "Vercel", "DNS", "V0", "Server Actions",],
-    link: "https://btc-dashboard-kl97.vercel.app/login",
+    link: "https://btc.j3g.dev/",
     github: "https://github.com/josematute/btc_dashboard",
     duration: "Mar 2025 – Present",
   },
