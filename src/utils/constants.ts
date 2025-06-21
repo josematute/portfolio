@@ -11,4 +11,4 @@ export const PROFILE_DESCRIPTION = "Full-stack engineer specializing in Next.js,
 
 export const RESUME_FILE_NAME = "Jose_Garcia_Resume.pdf"
 
-export const RESUME_GDRIVE_LINK = "https://drive.google.com/file/d/1dpUpSn3UvqCdMGgJ4NAaDvJOPGKNLURK/view?usp=sharing"
+export const RESUME_GDRIVE_LINK = "https://drive.google.com/file/d/1pPnRPEDRwYEIhVfXU71ldJ56oN6a_Cxm/view?usp=sharing"
