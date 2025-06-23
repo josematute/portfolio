@@ -84,8 +84,8 @@ export const projects: Project[] = [
     description:
       "A TypeScript-based Express server that interfaces with a self-hosted Bitcoin node, providing blockchain data via a RESTful API. Utilizes TSOA for API documentation and adheres to separation of concerns principles.",
     thumbnail: "/btc-server.png",
-    skills: ["TypeScript", "Express", "JWT Auth", "TSOA", "bitcoin-cli", "REST API", "Docker", "Ngrok", "Prisma", "PostgreSQL", "Swagger"],
-    link: "https://jeg.ngrok.app/docs/",
+    skills: ["TypeScript", "Express", "TSOA", "bitcoin-cli", "REST API", "Ngrok", "PostgreSQL", "Swagger"],
+    link: "https://bitcoin-node-server.onrender.com/docs/",
     github: "https://github.com/josematute/bitcoin-node-server",
     duration: "Mar 2025 – Present",
   },
