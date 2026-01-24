@@ -12,6 +12,16 @@ export const PROJECTS: Project[] = [
     duration: "2026",
   },
   {
+    title: "SQL LangGraph Agent",
+    pitch: "Conversational SQL agent with memory using LangChain and LangGraph",
+    description: "Intelligent SQL database assistant that uses natural language to query any SQL database. Features conversation memory through LangGraph checkpointing, multi-database support (PostgreSQL, MySQL, SQLite), and LangSmith tracing for debugging.",
+    thumbnail: "/sql-agent.gif",
+    technologies: ["Python", "LangChain", "LangGraph", "OpenAI", "AWS Bedrock", "PostgreSQL", "SQLAlchemy", "Docker", "LangSmith"],
+    link: null,
+    github: "https://github.com/josematute/sql-langgraph-agent",
+    duration: "2025",
+  },
+  {
     title: "Recipe API",
     pitch: "FastAPI reference implementation with real-time features",
     description: "Comprehensive FastAPI showcase demonstrating SQLAlchemy 2.0, JWT auth, WebSocket notifications, background tasks with Celery, and full-stack patterns",
