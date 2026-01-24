@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     title: "Hospital Incident Reporting Platform",
     pitch: "AI-assisted incident form extraction and workflow management",
     description: "Incident management web app for hospitals that accelerates reporting by letting staff describe what happened in natural language and using an AI chatbot to extract structured fields (severity, parties involved, medications, and more) across very large forms. Includes form builders with templates, account and user management, follow-up workflows after submission, and duplicate incident detection using embeddings to reduce repeated reports and improve data quality.",
-    thumbnail: "/rldatix_logo.jpeg",
+    thumbnail: "/RLDatix logo.webp",
     technologies: ["React", "Vite", "TypeScript", "TanStack Query", "TanStack Router", "Material UI", "Python", "Flask", "PostgreSQL", "Docker", "RabbitMQ", "Celery", "Embeddings", "Claude", "LangGraph", "LangChain"],
     link: null,
     github: null,
