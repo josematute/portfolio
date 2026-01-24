@@ -4,13 +4,15 @@ import { Button } from "@/components/ui/button"
 import { ME } from "@/constants"
 import { SiGithub, SiLinkedin } from "react-icons/si"
 
+const sequenceDuration = 1750 // 1.75 seconds
+
 export function Hero() {
 	const handleResumeClick = () => {
 		// Open resume in new tab
 		window.open(ME.resumeUrl, "_blank", "noopener,noreferrer")
 	}
 	return (
-		<section className="flex flex-col items-center justify-center px-4 py-24 md:py-32 text-center">
+		<section className="flex flex-col items-center justify-center px-4 py-12 text-center">
 			{/* Profile Image */}
 			<div className="mb-8">
 				<img src={ME.localImage} alt={ME.name} className="w-32 h-32 rounded-full object-cover border-4 border-border shadow-lg" />
@@ -24,13 +26,13 @@ export function Hero() {
 				<TypeAnimation
 					sequence={[
 						"Full-stack Developer (TypeScript + React)",
-						2000,
+						sequenceDuration,
 						"Building AI workflows with Langgraph and Claude",
-						2000,
+						sequenceDuration,
 						"Mobile Developer (Flutter)",
-						2000,
-						"Exploring AI Agents with Langchain and LLMs",
-						2000
+						sequenceDuration,
+						"Exploring AI Agents with Langchain and OpenAI",
+						sequenceDuration
 					]}
 					wrapper="span"
 					speed={50}

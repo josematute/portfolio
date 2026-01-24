@@ -6,17 +6,23 @@ import { PROJECTS } from "@/data/projects"
 
 export function Projects() {
 	return (
-		<section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+		<section className="py-8 md:py-12 px-6 md:px-12 max-w-7xl mx-auto">
 			{/* Section Header */}
-			<div className="mb-12">
+			<div className="mb-12 opacity-0 animate-[fadeIn_0.6s_ease-in_1.2s_forwards]">
 				<h2 className="text-3xl md:text-4xl font-bold mb-3">Projects</h2>
 				<p className="text-muted-foreground text-lg">Building full-stack applications with modern tech stacks</p>
 			</div>
 
 			{/* Projects Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{PROJECTS.map((project) => (
-					<Card key={project.title} className="flex flex-col h-full hover:shadow-lg transition-shadow">
+				{PROJECTS.map((project, index) => (
+					<Card 
+						key={project.title} 
+						className="flex flex-col h-full hover:shadow-lg transition-shadow opacity-0 translate-y-4"
+						style={{
+							animation: `slideUp 0.8s ease-out ${1.6 + index * 0.15}s forwards`
+						}}
+					>
 						{/* Thumbnail */}
 						{project.thumbnail && (
 							<div className="w-full h-48 overflow-hidden rounded-t-xl">
