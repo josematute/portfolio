@@ -36,10 +36,6 @@ export interface HeroData {
   proofLine: string
 }
 
-export interface FooterData {
-  lastUpdated: string // ISO date string or human-readable
-}
-
 // Theme management (for future dark mode toggle)
 export enum Theme {
   Light = "light",

@@ -1,4 +1,4 @@
-import { NowItemCategory, type PersonalInfo, type HeroData, type Project, type NowItem, type FooterData } from '@/types'
+import { NowItemCategory, type PersonalInfo, type HeroData, type NowItem, } from '@/types'
 
 // Your personal info - reused across components
 export const ME: PersonalInfo = {
@@ -28,7 +28,3 @@ export const NOW: NowItem[] = [
     details: ["AI workflow automation"],
   },
 ]
-
-export const FOOTER: FooterData = {
-  lastUpdated: new Date().toISOString().split("T")[0], // YYYY-MM-DD format
-}

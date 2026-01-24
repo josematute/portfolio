@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero"
 import { Projects } from "@/components/projects"
 import { Now } from "@/components/now"
+import { Footer } from "@/components/footer"
 
 export function Portfolio() {
 	return (
@@ -8,7 +9,7 @@ export function Portfolio() {
 			<Hero />
 			<Now />
 			<Projects />
-			{/* TODO: Add Footer */}
+			<Footer />
 		</div>
 	)
 }
