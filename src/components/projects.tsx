@@ -1,8 +1,9 @@
-import { Github, ExternalLink } from "lucide-react"
+import { ExternalLink, Briefcase } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { PROJECTS } from "@/data/projects"
+import { SiGithub } from "react-icons/si"
 
 export function Projects() {
 	return (
@@ -15,60 +16,78 @@ export function Projects() {
 
 			{/* Projects Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{PROJECTS.map((project, index) => (
-					<Card 
-						key={project.title} 
-						className="flex flex-col h-full hover:shadow-lg transition-shadow opacity-0 translate-y-4"
-						style={{
-							animation: `slideUp 0.8s ease-out ${1.6 + index * 0.15}s forwards`
-						}}
-					>
-						{/* Thumbnail */}
-						{project.thumbnail && (
-							<div className="w-full h-48 overflow-hidden rounded-t-xl">
-								<img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
-							</div>
-						)}
+				{PROJECTS.map((project, index) => {
+					const isActive = !project.endDate
 
-						{/* Content */}
-						<CardHeader>
-							<CardTitle className="text-xl">{project.title}</CardTitle>
-							<CardDescription>{project.pitch}</CardDescription>
-						</CardHeader>
-
-						<CardContent className="flex-1">
-							{/* Tech Stack Badges */}
-							<div className="flex flex-wrap gap-2">
-								{project.technologies.map((tech) => (
-									<Badge key={tech} variant="secondary">
-										{tech}
+					return (
+						<Card
+							key={project.title}
+							className="flex flex-col h-full hover:shadow-lg transition-shadow opacity-0 translate-y-4 relative"
+							style={{
+								animation: `slideUp 0.8s ease-out ${1.6 + index * 0.15}s forwards`
+							}}>
+							{/* Status Badges - Top Right */}
+							<div className="absolute top-3 right-3 flex gap-2 z-10">
+								{isActive && (
+									<Badge variant="default" className="bg-green-500 hover:bg-green-600 text-white animate-pulse">
+										Active
 									</Badge>
-								))}
+								)}
+								{project.work && (
+									<Badge variant="outline" className="bg-background/80 backdrop-blur-sm">
+										<Briefcase className="size-3 mr-1" />
+										Work
+									</Badge>
+								)}
 							</div>
-						</CardContent>
 
-						{/* Footer with Links */}
-						<CardFooter className="gap-2 pt-4 border-t">
-							{project.github && (
-								<Button asChild variant="outline" size="sm" className="flex-1">
-									<a href={project.github} target="_blank" rel="noopener noreferrer">
-										<Github className="size-4" />
-										Code
-									</a>
-								</Button>
+							{/* Thumbnail */}
+							{project.thumbnail && (
+								<div className="w-full h-48 overflow-hidden rounded-t-xl">
+									<img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
+								</div>
 							)}
-							{project.link && (
-								<Button asChild variant="default" size="sm" className="flex-1">
-									<a href={project.link} target="_blank" rel="noopener noreferrer">
-										<ExternalLink className="size-4" />
-										Live
-									</a>
-								</Button>
-							)}
-							{!project.github && !project.link && <span className="text-sm text-muted-foreground">Private project</span>}
-						</CardFooter>
-					</Card>
-				))}
+
+							{/* Content */}
+							<CardHeader>
+								<CardTitle className="text-xl">{project.title}</CardTitle>
+								<CardDescription>{project.pitch}</CardDescription>
+							</CardHeader>
+
+							<CardContent className="flex-1">
+								{/* Tech Stack Badges */}
+								<div className="flex flex-wrap gap-2">
+									{project.technologies.map((tech) => (
+										<Badge key={tech} variant="secondary">
+											{tech}
+										</Badge>
+									))}
+								</div>
+							</CardContent>
+
+							{/* Footer with Links */}
+							<CardFooter className="gap-2 pt-4 border-t">
+								{project.github && (
+									<Button asChild variant="outline" size="sm" className="flex-1">
+										<a href={project.github} target="_blank" rel="noopener noreferrer">
+											<SiGithub className="size-4" />
+											Code
+										</a>
+									</Button>
+								)}
+								{project.link && (
+									<Button asChild variant="default" size="sm" className="flex-1">
+										<a href={project.link} target="_blank" rel="noopener noreferrer">
+											<ExternalLink className="size-4" />
+											Live
+										</a>
+									</Button>
+								)}
+								{!project.github && !project.link && <span className="text-sm text-muted-foreground">Private project</span>}
+							</CardFooter>
+						</Card>
+					)
+				})}
 			</div>
 		</section>
 	)

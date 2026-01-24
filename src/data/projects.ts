@@ -99,15 +99,35 @@ const PROJECTS_UNSORTED: Project[] = [
   },
 ]
 
-// Sort projects: active projects first, then by most recent startDate
+// Sort projects: active first (no endDate), then by most recent, work projects as tiebreaker
 export const PROJECTS = PROJECTS_UNSORTED.sort((a, b) => {
   const aActive = !a.endDate
   const bActive = !b.endDate
 
-  // Active projects come first
+  // Active projects always come first
   if (aActive && !bActive) return -1
   if (!aActive && bActive) return 1
 
-  // Within same active status, sort by startDate (most recent first)
-  return b.startDate.localeCompare(a.startDate)
+  // For active projects (both have no endDate)
+  if (aActive && bActive) {
+    // Work projects first
+    if (a.work && !b.work) return -1
+    if (!a.work && b.work) return 1
+    
+    // Then sort by most recent startDate
+    return b.startDate.localeCompare(a.startDate)
+  }
+
+  // For completed projects (both have endDate)
+  // Sort by most recent endDate
+  if (a.endDate && b.endDate) {
+    const endDateComparison = b.endDate.localeCompare(a.endDate)
+    if (endDateComparison !== 0) return endDateComparison
+    
+    // If same endDate, work projects first
+    if (a.work && !b.work) return -1
+    if (!a.work && b.work) return 1
+  }
+
+  return 0
 })
