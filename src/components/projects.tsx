@@ -25,7 +25,7 @@ export function Projects() {
 	)
 }
 
-function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: number }) {
+function ProjectCard({ project, index }: { project: (typeof PROJECTS)[0]; index: number }) {
 	const [isExpanded, setIsExpanded] = useState(false)
 	const isActive = !project.endDate
 	const hasDescription = project.description && project.description.length > 0
@@ -68,14 +68,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 				{/* Expandable Description */}
 				{hasDescription && (
 					<div className="text-sm text-muted-foreground">
-						<div className={isExpanded ? "" : "line-clamp-2"}>
-							{project.description}
-						</div>
+						<div className={isExpanded ? "" : "line-clamp-2"}>{project.description}</div>
 						{project.description && project.description.length > 100 && (
-							<button
-								onClick={() => setIsExpanded(!isExpanded)}
-								className="text-primary hover:underline flex items-center gap-1 mt-1 text-xs"
-							>
+							<button onClick={() => setIsExpanded(!isExpanded)} className="text-primary hover:underline flex items-center gap-1 mt-1 text-xs">
 								{isExpanded ? (
 									<>
 										Show less <ChevronUp className="size-3" />
