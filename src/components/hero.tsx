@@ -9,7 +9,7 @@ export function Hero() {
 		window.open(ME.resumeUrl, "_blank", "noopener,noreferrer")
 	}
 	return (
-		<section className="flex flex-col items-center justify-center min-h-screen px-4 py-16 text-center">
+		<section className="flex flex-col items-center justify-center px-4 py-24 md:py-32 text-center">
 			{/* Profile Image */}
 			<div className="mb-8">
 				<img src={ME.localImage} alt={ME.name} className="w-32 h-32 rounded-full object-cover border-4 border-border shadow-lg" />

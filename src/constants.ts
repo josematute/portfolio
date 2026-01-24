@@ -20,7 +20,7 @@ export const NOW: NowItem[] = [
   {
     category: NowItemCategory.Work,
     content: "Working at RLDatix on hospital incident reporting platform",
-    details: ["Claude AI integration", "Flask backend", "React frontend"],
+    details: ["Claude AI integration", "Flask backend", "React frontend", "RabbitMQ + Celery"],
   },
   {
     category: NowItemCategory.Exploring,
