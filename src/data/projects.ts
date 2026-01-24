@@ -1,6 +1,6 @@
 import type { Project } from "@/types";
 
-export const PROJECTS: Project[] = [
+const PROJECTS_UNSORTED: Project[] = [
   {
     title: "Hospital Incident Reporting Platform",
     pitch: "AI-assisted incident form extraction and workflow management",
@@ -9,7 +9,9 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Vite", "TypeScript", "TanStack Query", "TanStack Router", "Material UI", "Python", "Flask", "PostgreSQL", "Docker", "RabbitMQ", "Celery", "Embeddings", "Claude", "LangGraph", "LangChain"],
     link: null,
     github: null,
-    duration: "2025-2026",
+    startDate: "2025-09",
+    endDate: null, // Active/ongoing
+    work: true,
   },
   {
     title: "Cue Up",
@@ -19,7 +21,9 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "TypeScript", "TanStack Router", "TanStack Query", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     link: "https://cueup-test.j3g.dev",
     github: null,
-    duration: "2026",
+    startDate: "2026-01",
+    endDate: null, // Active/ongoing
+    work: false,
   },
   {
     title: "SQL LangGraph Agent",
@@ -29,7 +33,9 @@ export const PROJECTS: Project[] = [
     technologies: ["Python", "LangChain", "LangGraph", "OpenAI", "AWS Bedrock", "PostgreSQL", "SQLAlchemy", "Docker", "LangSmith"],
     link: null,
     github: "https://github.com/josematute/sql-langgraph-agent",
-    duration: "2025",
+    startDate: "2025-11",
+    endDate: "2025-12",
+    work: false,
   },
   {
     title: "Recipe API",
@@ -39,7 +45,9 @@ export const PROJECTS: Project[] = [
     technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "Celery", "Redis", "WebSocket", "JWT"],
     link: null,
     github: "https://github.com/josematute/fast_api_playground",
-    duration: "2025-2026",
+    startDate: "2025-12",
+    endDate: "2025-12",
+    work: false,
   },
   {
     title: "Bitcoin Node Server",
@@ -49,7 +57,9 @@ export const PROJECTS: Project[] = [
     technologies: ["Bitcoin Core", "Node.js", "TypeScript", "Digital Ocean"],
     link: null,
     github: "https://github.com/josematute/bitcoin-node-server",
-    duration: "2025",
+    startDate: "2025-03",
+    endDate: "2025-06",
+    work: false,
   },
   {
     title: "BTC Dashboard",
@@ -59,7 +69,9 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Next.js", "TypeScript", "Bitcoin RPC", "Charts"],
     link: null,
     github: "https://github.com/josematute/btc_dashboard",
-    duration: "2025",
+    startDate: "2025-05",
+    endDate: "2025-07",
+    work: false,
   },
   {
     title: "VIUS Built",
@@ -69,7 +81,9 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Next.js", "TypeScript", "Supabase"],
     link: null,
     github: null,
-    duration: "2024-2025",
+    startDate: "2024-02",
+    endDate: "2025-05",
+    work: true,
   },
   {
     title: "1440",
@@ -79,6 +93,21 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart", "Salesforce", "Firebase", "GraphQL"],
     link: "https://apps.apple.com/us/app/1440-mobile/id6468288380",
     github: null,
-    duration: "2023-2024",
+    startDate: "2023-05",
+    endDate: "2024-02",
+    work: true,
   },
 ]
+
+// Sort projects: active projects first, then by most recent startDate
+export const PROJECTS = PROJECTS_UNSORTED.sort((a, b) => {
+  const aActive = !a.endDate
+  const bActive = !b.endDate
+
+  // Active projects come first
+  if (aActive && !bActive) return -1
+  if (!aActive && bActive) return 1
+
+  // Within same active status, sort by startDate (most recent first)
+  return b.startDate.localeCompare(a.startDate)
+})

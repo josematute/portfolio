@@ -16,7 +16,9 @@ export interface Project {
   technologies: string[] // Tech stack (shown as badges)
   link?: string | null // Live demo/site
   github?: string | null // GitHub repo
-  duration: string // Timeframe of the project
+  startDate: string // ISO date string (YYYY-MM-DD) or YYYY-MM
+  endDate?: string | null // ISO date string or null if ongoing/active
+  work?: boolean // Whether the project is a work project
 }
 
 export enum NowItemCategory {
