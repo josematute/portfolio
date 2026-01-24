@@ -1,6 +1,7 @@
 import { FileText } from "lucide-react"
+import { TypeAnimation } from "react-type-animation"
 import { Button } from "@/components/ui/button"
-import { ME, HERO } from "@/constants"
+import { ME } from "@/constants"
 import { SiGithub, SiLinkedin } from "react-icons/si"
 
 export function Hero() {
@@ -18,8 +19,25 @@ export function Hero() {
 			{/* Name */}
 			<h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">{ME.name}</h1>
 
-			{/* Tagline */}
-			<p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-2xl">{HERO.tagline}</p>
+			{/* Animated Tagline */}
+			<div className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-2xl min-h-14 flex items-center justify-center">
+				<TypeAnimation
+					sequence={[
+						"Full-stack Developer (TypeScript + React)",
+						2000,
+						"Building AI workflows with Langgraph and Claude",
+						2000,
+						"Mobile Developer (Flutter)",
+						2000,
+						"Exploring AI Agents with Langchain and LLMs",
+						2000
+					]}
+					wrapper="span"
+					speed={50}
+					repeat={Infinity}
+					className="inline-block"
+				/>
+			</div>
 
 			{/* Action Buttons */}
 			<div className="flex flex-wrap items-center justify-center gap-4 mb-8">
@@ -43,8 +61,15 @@ export function Hero() {
 				</Button>
 			</div>
 
-			{/* Proof Line */}
-			<p className="text-sm md:text-base text-muted-foreground max-w-3xl">{HERO.proofLine}</p>
+			{/* Proof Line with subtle animation */}
+			<div className="text-sm md:text-base text-muted-foreground max-w-3xl">
+				<TypeAnimation
+					sequence={["Built fullstack applications using React, Flask, PostgreSQL, Supabase, and more"]}
+					wrapper="p"
+					speed={70}
+					cursor={false}
+				/>
+			</div>
 		</section>
 	)
 }

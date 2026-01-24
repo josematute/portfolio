@@ -1,4 +1,5 @@
 import { Briefcase, Sparkles } from 'lucide-react'
+import { TypeAnimation } from 'react-type-animation'
 import { NOW } from '@/constants'
 import { NowItemCategory } from '@/types'
 
@@ -6,7 +7,7 @@ export function Now() {
   return (
     <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="mb-12">
+      <div className="mb-12 opacity-0 animate-[fadeIn_0.6s_ease-in_forwards]">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Now</h2>
         <p className="text-muted-foreground text-lg">
           What I'm currently working on and exploring
@@ -16,7 +17,13 @@ export function Now() {
       {/* Now Items */}
       <div className="space-y-8">
         {NOW.map((item, index) => (
-          <div key={index} className="flex gap-4">
+          <div 
+            key={index} 
+            className="flex gap-4 opacity-0 translate-y-4"
+            style={{
+              animation: `slideUp 0.6s ease-out ${0.2 + index * 0.2}s forwards`
+            }}
+          >
             {/* Icon */}
             <div className="shrink-0">
               {item.category === NowItemCategory.Work ? (
@@ -35,7 +42,20 @@ export function Now() {
               <h3 className="text-xl font-semibold mb-2">
                 {item.category === NowItemCategory.Work ? 'Current Work' : 'Exploring'}
               </h3>
-              <p className="text-muted-foreground mb-3">{item.content}</p>
+              
+              {/* Typing animation for content */}
+              <div className="text-muted-foreground mb-3">
+                <TypeAnimation
+                  sequence={[
+                    (index * 800) + 400, // Delay based on index
+                    item.content
+                  ]}
+                  wrapper="p"
+                  speed={70}
+                  cursor={false}
+                  preRenderFirstString={false}
+                />
+              </div>
               
               {/* Details */}
               {item.details && item.details.length > 0 && (
