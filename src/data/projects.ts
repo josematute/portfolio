@@ -2,6 +2,16 @@ import type { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
+    title: "Hospital Incident Reporting Platform",
+    pitch: "AI-assisted incident form extraction and workflow management",
+    description: "Incident management web app for hospitals that accelerates reporting by letting staff describe what happened in natural language and using an AI chatbot to extract structured fields (severity, parties involved, medications, and more) across very large forms. Includes form builders with templates, account and user management, follow-up workflows after submission, and duplicate incident detection using embeddings to reduce repeated reports and improve data quality.",
+    thumbnail: "/rldatix_logo.jpeg",
+    technologies: ["React", "Vite", "TypeScript", "TanStack Query", "TanStack Router", "Material UI", "Python", "Flask", "PostgreSQL", "Docker", "RabbitMQ", "Celery", "Embeddings", "Claude", "LangGraph", "LangChain"],
+    link: null,
+    github: null,
+    duration: "2025-2026",
+  },
+  {
     title: "Cue Up",
     pitch: "Real-time collaborative song voting app for parties",
     description: "Party host creates polls with song options, guests vote in real-time, and results update live. Features AI-powered song suggestions, custom party images, anonymous voting, and live presence tracking",

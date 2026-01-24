@@ -20,18 +20,29 @@ export const HERO: HeroData = {
     "Mobile Developer (Flutter & React Native)",
     "Exploring AI Agents with Langchain",
   ],
-  proofLine: "Built fullstack applications using technologies like React, Flask, PostgreSQL, Supabase, and more",
+  proofLine: "Building AI-assisted, production-grade full-stack apps: React + TanStack on the frontend, Python (Flask/FastAPI) on the backend, PostgreSQL data models, background workers (Celery + RabbitMQ), and embedding-based duplicate detection for real-world workflows",
 }
 
 export const NOW: NowItem[] = [
   {
     category: NowItemCategory.Work,
-    content: "Working at RLDatix on hospital incident reporting platform",
-    details: ["Claude AI integration", "Flask backend", "React frontend", "RabbitMQ + Celery"],
+    content: "Building a hospital incident reporting platform at RLDatix",
+    details: [
+      "AI chatbot that converts incident narratives into structured form fields (severity, medications, stakeholders, and more)",
+      "Duplicate incident detection using embeddings to reduce repeat submissions",
+      "Form builder with templates, editing, and follow-up workflows after submission",
+      "React + TanStack Query/Router + Material UI frontend",
+      "Python Flask backend with async/background processing (Celery + RabbitMQ) and PostgreSQL",
+      "Local dev and deployment consistency with Docker Compose and Nginx",
+    ],
   },
   {
     category: NowItemCategory.Exploring,
-    content: "Experimenting with AI agents and tools, Python development",
-    details: ["AI workflow automation", "FastAPI", "Cursor"],
+    content: "Experimenting with AI agents, workflows, and Python tooling",
+    details: [
+      "LangGraph and LangChain workflow and agent patterns for extraction, routing, and automation",
+      "FastAPI experiments and reference implementations",
+      "Using Cursor IDE for development to write code faster and catch up with the latest AI tools",
+    ],
   },
 ]
