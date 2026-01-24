@@ -8,11 +8,12 @@ export const ME: PersonalInfo = {
   github: "https://github.com/josematute",
   linkedin: "https://www.linkedin.com/in/jose-garcia-swe/",
   resumeUrl: "https://resume.j3g.dev",
+  localImage: "/yo.jpeg",
 }
 
 export const HERO: HeroData = {
-  tagline: "Full-stack (Next.js, TS) + AI workflows",
-  proofLine: "Built Bitcoin node API, VIUS construction platform, multi-channel messaging app",
+  tagline: "Full-stack (Typescript + React and Python)",
+  proofLine: "Built fullstack applications using technologies like React, Flask, PostgreSQL, Supabase, and more",
 }
 
 export const PROJECTS: Project[] = [
@@ -70,8 +71,8 @@ export const NOW: NowItem[] = [
   },
   {
     category: NowItemCategory.Exploring,
-    content: "Building Bitcoin infrastructure and experimenting with AI agents",
-    details: ["Bitcoin node development", "AI workflow automation"],
+    content: "Experimenting with AI agents",
+    details: ["AI workflow automation"],
   },
 ]
 

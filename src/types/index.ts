@@ -5,6 +5,7 @@ export interface PersonalInfo {
   github: string
   linkedin: string
   resumeUrl: string
+  localImage: string
 }
 
 export interface Project {
