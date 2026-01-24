@@ -1,16 +1,20 @@
 import { FileText } from "lucide-react"
 import { TypeAnimation } from "react-type-animation"
 import { Button } from "@/components/ui/button"
-import { ME } from "@/constants"
+import { ME, HERO } from "@/constants"
 import { SiGithub, SiLinkedin } from "react-icons/si"
 
-const sequenceDuration = 1750 // 1.75 seconds
+const SEQUENCE_DURATION = 1750 // 1.75 seconds
 
 export function Hero() {
 	const handleResumeClick = () => {
 		// Open resume in new tab
 		window.open(ME.resumeUrl, "_blank", "noopener,noreferrer")
 	}
+
+	// Build sequence array: [text1, delay, text2, delay, ...]
+	const sequence = HERO.taglines.flatMap((tagline) => [tagline, SEQUENCE_DURATION])
+
 	return (
 		<section className="flex flex-col items-center justify-center px-4 py-12 text-center">
 			{/* Profile Image */}
@@ -23,22 +27,7 @@ export function Hero() {
 
 			{/* Animated Tagline */}
 			<div className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-2xl min-h-14 flex items-center justify-center">
-				<TypeAnimation
-					sequence={[
-						"Full-stack Developer (TypeScript + React)",
-						sequenceDuration,
-						"Building AI workflows with Langgraph and Claude",
-						sequenceDuration,
-						"Mobile Developer (Flutter)",
-						sequenceDuration,
-						"Exploring AI Agents with Langchain and OpenAI",
-						sequenceDuration
-					]}
-					wrapper="span"
-					speed={50}
-					repeat={Infinity}
-					className="inline-block"
-				/>
+				<TypeAnimation sequence={sequence} wrapper="span" speed={50} repeat={Infinity} className="inline-block" />
 			</div>
 
 			{/* Action Buttons */}

@@ -12,7 +12,14 @@ export const ME: PersonalInfo = {
 }
 
 export const HERO: HeroData = {
-  tagline: "Full-stack (Typescript + React and Python)",
+  taglines: [
+    "Full-stack Developer (React + Python)",
+    "Building AI workflows with Langgraph and Claude",
+    "Frontend Developer (React, Vite, Tanstack Query & Router)",
+    "Backend Developer (Flask, FastAPI, PostgreSQL, Supabase)",
+    "Mobile Developer (Flutter & React Native)",
+    "Exploring AI Agents with Langchain",
+  ],
   proofLine: "Built fullstack applications using technologies like React, Flask, PostgreSQL, Supabase, and more",
 }
 
@@ -24,7 +31,7 @@ export const NOW: NowItem[] = [
   },
   {
     category: NowItemCategory.Exploring,
-    content: "Experimenting with AI agents",
-    details: ["AI workflow automation"],
+    content: "Experimenting with AI agents and tools, Python development",
+    details: ["AI workflow automation", "FastAPI", "Cursor"],
   },
 ]

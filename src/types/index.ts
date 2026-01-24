@@ -32,7 +32,7 @@ export interface NowItem {
 }
 
 export interface HeroData {
-  tagline: string
+  taglines: string[]
   proofLine: string
 }
 
