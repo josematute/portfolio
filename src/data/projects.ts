@@ -2,6 +2,16 @@ import type { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
+    title: "Cue Up",
+    pitch: "Real-time collaborative song voting app for parties",
+    description: "Party host creates polls with song options, guests vote in real-time, and results update live. Features AI-powered song suggestions, custom party images, anonymous voting, and live presence tracking",
+    thumbnail: "/cueup.png",
+    technologies: ["React", "TypeScript", "TanStack Router", "TanStack Query", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
+    link: "https://cueup-test.j3g.dev",
+    github: null,
+    duration: "2026",
+  },
+  {
     title: "Recipe API",
     pitch: "FastAPI reference implementation with real-time features",
     description: "Comprehensive FastAPI showcase demonstrating SQLAlchemy 2.0, JWT auth, WebSocket notifications, background tasks with Celery, and full-stack patterns",
