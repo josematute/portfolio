@@ -16,8 +16,7 @@ export interface Project {
   technologies: string[] // Tech stack (shown as badges)
   link?: string | null // Live demo/site
   github?: string | null // GitHub repo
-  impact?: string // What you built/achieved (1 bullet)
-  duration?: string // Optional timeframe
+  duration: string // Timeframe of the project
 }
 
 export enum NowItemCategory {
