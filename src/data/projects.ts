@@ -4,9 +4,14 @@ const PROJECTS_UNSORTED: Project[] = [
   {
     title: "Hospital Incident Reporting Platform",
     pitch: "AI-assisted incident form extraction and workflow management",
-    description: "Incident management web app for hospitals that accelerates reporting by letting staff describe what happened in natural language and using an AI chatbot to extract structured fields (severity, parties involved, medications, and more) across very large forms. Includes form builders with templates, account and user management, follow-up workflows after submission, and duplicate incident detection using embeddings to reduce repeated reports and improve data quality.",
+    bullets: [
+      "Build and maintain full-stack product work across Python/Flask, React/TypeScript, SQLAlchemy, Alembic, PostgreSQL, TanStack Query, TanStack Router, and Material UI, spanning backend APIs, database schemas and migrations, and frontend workflows.",
+      "Develop LangGraph-based agentic workflows for healthcare incident reporting, including natural-language intake, duplicate detection, form selection, and structured field extraction on complex clinical forms, with LangSmith for tracing and debugging.",
+      "Partner regularly with the integration team and cloud team on EHR-backed clinical context for incident forms (Epic, Cerner, and similar), plus environments, PostgreSQL changes, and managed deployment requirements.",
+      "Use AI-assisted development with structured markdown context in the repo to design and ship high-quality product features faster for customers.",
+    ],
     thumbnail: "/RLDatix logo.webp",
-    technologies: ["React", "Vite", "TypeScript", "TanStack Query", "TanStack Router", "Material UI", "Python", "Flask", "PostgreSQL", "Docker", "RabbitMQ", "Celery", "Embeddings", "Claude", "LangGraph", "LangChain"],
+    technologies: ["React", "Vite", "TypeScript", "TanStack Query", "TanStack Router", "Material UI", "Python", "Flask", "PostgreSQL", "SQLAlchemy", "Alembic", "Docker", "RabbitMQ", "Celery", "Embeddings", "Claude", "LangGraph", "LangSmith", "LangChain"],
     link: null,
     github: null,
     startDate: "2025-09",
@@ -19,10 +24,40 @@ const PROJECTS_UNSORTED: Project[] = [
     description: "Party host creates polls with song options, guests vote in real-time, and results update live. Features AI-powered song suggestions, custom party images, anonymous voting, and live presence tracking",
     thumbnail: "/cueup.png",
     technologies: ["React", "TypeScript", "TanStack Router", "TanStack Query", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
-    link: "https://cueup-test.j3g.dev",
+    link: null,
     github: null,
     startDate: "2026-01",
-    endDate: null, // Active/ongoing
+    endDate: "2026-02",
+    work: false,
+  },
+  {
+    title: "FloorPilot",
+    pitch: "Structured workflows and collaboration for client-facing teams",
+    description: "Web app for flooring companies coordinating complex, client-facing work: structured data capture and collaboration in one place so companies can run repeatable workflows without losing context across people and accounts.",
+    thumbnail: "/floorpilot_logo.jpg",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "TypeScript",
+      "React",
+      "Vite",
+      "PostgreSQL",
+      "SQLModel",
+      "Alembic",
+      "TanStack Router",
+      "TanStack Query",
+      "Clerk",
+      "Docker",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Neon",
+      "Railway",
+      "Cloudflare Pages",
+    ],
+    link: "https://floorpilot.j3g.dev",
+    github: null,
+    startDate: "2026-03",
+    endDate: null,
     work: false,
   },
   {
@@ -113,7 +148,7 @@ export const PROJECTS = PROJECTS_UNSORTED.sort((a, b) => {
     // Work projects first
     if (a.work && !b.work) return -1
     if (!a.work && b.work) return 1
-    
+
     // Then sort by most recent startDate
     return b.startDate.localeCompare(a.startDate)
   }
@@ -123,7 +158,7 @@ export const PROJECTS = PROJECTS_UNSORTED.sort((a, b) => {
   if (a.endDate && b.endDate) {
     const endDateComparison = b.endDate.localeCompare(a.endDate)
     if (endDateComparison !== 0) return endDateComparison
-    
+
     // If same endDate, work projects first
     if (a.work && !b.work) return -1
     if (!a.work && b.work) return 1

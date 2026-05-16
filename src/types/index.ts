@@ -12,6 +12,8 @@ export interface Project {
   title: string
   pitch: string // One-line description
   description?: string // Optional longer description
+  /** Optional bullet list (e.g. role highlights); rendered as a <ul> when present */
+  bullets?: string[]
   thumbnail?: string | null // Optional project image
   technologies: string[] // Tech stack (shown as badges)
   link?: string | null // Live demo/site

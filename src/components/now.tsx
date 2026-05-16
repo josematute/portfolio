@@ -1,4 +1,4 @@
-import { Briefcase, Sparkles } from "lucide-react"
+import { Briefcase, Hammer, Sparkles } from "lucide-react"
 import { TypeAnimation } from "react-type-animation"
 import { NOW } from "@/constants"
 import { NowItemCategory } from "@/types"
@@ -16,7 +16,7 @@ export function Now() {
 			<div className="space-y-8">
 				{NOW.map((item, index) => (
 					<div
-						key={index}
+						key={item.category}
 						className="flex gap-4 opacity-0 translate-y-4"
 						style={{
 							animation: `slideUp 1.2s ease-out ${0.4 + index * 0.4}s forwards`
@@ -27,6 +27,10 @@ export function Now() {
 								<div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
 									<Briefcase className="size-6 text-primary" />
 								</div>
+							) : item.category === NowItemCategory.Building ? (
+								<div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+									<Hammer className="size-6 text-amber-600 dark:text-amber-500" />
+								</div>
 							) : (
 								<div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center">
 									<Sparkles className="size-6 text-purple-500" />
@@ -36,7 +40,13 @@ export function Now() {
 
 						{/* Content */}
 						<div className="flex-1">
-							<h3 className="text-xl font-semibold mb-2">{item.category === NowItemCategory.Work ? "Current Work" : "Exploring"}</h3>
+							<h3 className="text-xl font-semibold mb-2">
+								{item.category === NowItemCategory.Work
+									? "Current Work"
+									: item.category === NowItemCategory.Building
+										? "Side project"
+										: "Exploring"}
+							</h3>
 
 							{/* Typing animation for content */}
 							<div className="text-muted-foreground mb-3">

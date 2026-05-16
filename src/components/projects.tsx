@@ -28,7 +28,11 @@ export function Projects() {
 function ProjectCard({ project, index }: { project: (typeof PROJECTS)[0]; index: number }) {
 	const [isExpanded, setIsExpanded] = useState(false)
 	const isActive = !project.endDate
-	const hasDescription = project.description && project.description.length > 0
+	const bullets = project.bullets ?? []
+	const hasBullets = bullets.length > 0
+	const hasDescription = Boolean(project.description && project.description.length > 0)
+	const bodyApproxLen = (project.description?.length ?? 0) + bullets.join(" ").length + bullets.length * 40
+	const showExpandToggle = bodyApproxLen > 120 || bullets.length > 1
 
 	return (
 		<Card
@@ -51,10 +55,10 @@ function ProjectCard({ project, index }: { project: (typeof PROJECTS)[0]; index:
 				)}
 			</div>
 
-			{/* Thumbnail */}
+			{/* Thumbnail — wide frame for site screenshots; image keeps aspect ratio */}
 			{project.thumbnail && (
-				<div className="w-full h-48 overflow-hidden rounded-t-xl">
-					<img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
+				<div className="w-full aspect-video overflow-hidden rounded-t-xl shrink-0 bg-muted/30 flex items-center justify-center p-2">
+					<img src={project.thumbnail} alt={project.title} className="max-h-full max-w-full object-contain" />
 				</div>
 			)}
 
@@ -65,12 +69,22 @@ function ProjectCard({ project, index }: { project: (typeof PROJECTS)[0]; index:
 			</CardHeader>
 
 			<CardContent className="flex-1 space-y-3">
-				{/* Expandable Description */}
-				{hasDescription && (
-					<div className="text-sm text-muted-foreground">
-						<div className={isExpanded ? "" : "line-clamp-2"}>{project.description}</div>
-						{project.description && project.description.length > 100 && (
-							<button onClick={() => setIsExpanded(!isExpanded)} className="text-primary hover:underline flex items-center gap-1 mt-1 text-xs">
+				{(hasDescription || hasBullets) && (
+					<div className="text-sm text-muted-foreground space-y-2">
+						{hasDescription && <div className={isExpanded || !showExpandToggle ? "" : "line-clamp-2"}>{project.description}</div>}
+						{hasBullets && (
+							<ul
+								className={`list-disc pl-4 space-y-2 marker:text-muted-foreground/80 ${isExpanded || !showExpandToggle ? "" : "max-h-[5.5rem] overflow-hidden"}`}>
+								{bullets.map((item, i) => (
+									<li key={i}>{item}</li>
+								))}
+							</ul>
+						)}
+						{showExpandToggle && (
+							<button
+								type="button"
+								onClick={() => setIsExpanded(!isExpanded)}
+								className="text-primary hover:underline flex items-center gap-1 mt-1 text-xs">
 								{isExpanded ? (
 									<>
 										Show less <ChevronUp className="size-3" />

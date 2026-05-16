@@ -26,14 +26,20 @@ export const HERO: HeroData = {
 export const NOW: NowItem[] = [
   {
     category: NowItemCategory.Work,
-    content: "Building a hospital incident reporting platform at RLDatix",
+    content: "Full-stack on a hospital incident reporting platform at RLDatix",
     details: [
-      "AI chatbot that converts incident narratives into structured form fields (severity, medications, stakeholders, and more)",
-      "Duplicate incident detection using embeddings to reduce repeat submissions",
-      "Form builder with templates, editing, and follow-up workflows after submission",
-      "React + TanStack Query/Router + Material UI frontend",
-      "Python Flask backend with async/background processing (Celery + RabbitMQ) and PostgreSQL",
-      "Local dev and deployment consistency with Docker Compose and Nginx",
+      "Build and maintain full-stack product work across Python/Flask, React/TypeScript, SQLAlchemy, Alembic, PostgreSQL, TanStack Query, TanStack Router, and Material UI, spanning backend APIs, database schemas and migrations, and frontend workflows.",
+      "Develop LangGraph-based agentic workflows for healthcare incident reporting, including natural-language intake, duplicate detection, form selection, and structured field extraction on complex clinical forms, with LangSmith for tracing and debugging.",
+      "Partner regularly with the integration team and cloud team on EHR-backed clinical context for incident forms (Epic, Cerner, and similar), plus environments, PostgreSQL changes, and managed deployment requirements.",
+      "Use AI-assisted development with structured markdown context in the repo to design and ship high-quality product features faster for customers.",
+    ],
+  },
+  {
+    category: NowItemCategory.Building,
+    content: "Building FloorPilot...",
+    details: [
+      "Web app for flooring companies coordinating complex, client-facing work: structured data capture and collaboration in one place so companies can run repeatable workflows without losing context across people and accounts.",
+      "Stack includes FastAPI, React, Vite, SQLModel, Alembic, PostgreSQL, TanStack Router and Query, Clerk, Docker, Neon, Railway, and Cloudflare Pages.",
     ],
   },
   {
