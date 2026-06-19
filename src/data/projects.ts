@@ -54,7 +54,7 @@ const PROJECTS_UNSORTED: Project[] = [
       "Railway",
       "Cloudflare Pages",
     ],
-    link: "https://floorpilot.j3g.dev",
+    link: "https://app.floorpilotselections.com",
     github: null,
     startDate: "2026-03",
     endDate: null,
